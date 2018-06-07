@@ -16,8 +16,8 @@ import com.elinext.kapturtesttask.steps.GmailSteps;
  */
 public class GmailTest {
 	private GmailSteps steps;
-	private final String LOGIN = "tomstellmach17@gmail.com";
-	private final String PASSWORD = "tom060812stellmach";
+	private final String LOGIN = "userfortest876@gmail.com";
+	private final String PASSWORD = "test1234test";
 	private final String SENDED_MESSAGES_URL = "https://mail.google.com/mail/u/0/#sent";
 	private final String SPAM_URL = "https://mail.google.com/mail/u/0/#spam";
 	private final String INCOMING_MESSAGES_URL = "https://mail.google.com/mail/u/0/#inbox";
