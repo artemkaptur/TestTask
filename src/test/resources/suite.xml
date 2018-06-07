@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FirstSuite">
+
+	<test name="TestTask">
+
+		<groups>
+			<dependencies>
+				<group name="gmail.com" depends-on="tut.by" />
+				<group name="delta.com" depends-on="gmail.com" />
+			</dependencies>
+		</groups>
+
+		<packages>
+			<package name="com.elinext.kapturtesttask.tests"></package>
+		</packages>
+
+	</test>
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+		<listener
+			class-name="com.elinext.kapturtesttask.listener.ScreenShotOnFailListener"></listener>
+	</listeners>
+
+</suite>
