@@ -21,7 +21,7 @@ import com.elinext.kapturtesttask.pages.AbstractPage;
  */
 public class TicketSelectionPage extends AbstractPage {
 
-	@FindBy(xpath = "/html/body/app-root/div[3]/app-flight-result-view/div/div/main/div/div[2]/div/div[6]/table/tbody/tr/td/div[1]/table/tbody/tr[3]/td[2]/div/a")
+	@FindBy(xpath = "//table[@class='flightResultTable']/tbody/tr[3]/td[2]/div/a")
 	private WebElement firstTicket;
 
 	public TicketSelectionPage(WebDriver driver) {
@@ -31,8 +31,13 @@ public class TicketSelectionPage extends AbstractPage {
 
 	public void selectTickets() {
 		firstTicket.click();
-		WebElement secondTicket = (new WebDriverWait(driver, 8)).until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"/html/body/app-root/div[3]/app-flight-result-view/div/div/main/div/div[2]/div/div[6]/table/tbody/tr/td/div[1]/table/tbody/tr[3]/td[2]/div/a")));
+		try {
+			Thread.sleep(6000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		WebElement secondTicket = (new WebDriverWait(driver, 8)).until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//table[@class='flightResultTable']/tbody/tr[3]/td[2]/div/a")));
 		secondTicket.click();
 	}
 

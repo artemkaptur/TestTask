@@ -18,11 +18,11 @@ public class DeltaComTest {
 	private DeltaComSteps steps;
 	private final String FROM = "JFK";
 	private final String TO = "SVO";
-	private final int DEP_DAY = 10;
-	private final int RET_DAY = 20;
+	private final int DEP_DAY = 20;
+	private final int RET_DAY = 25;
 	private final String NAME = "Blablabla";
 	private final String SURNAME = "Blabla";
-	private final String EMAIL = "Blablabla@mail.ru";
+	private final String EMAIL = "blablabla@mail.ru";
 
 	@BeforeMethod(description = "Init browser")
 	public void setUp() {
@@ -31,7 +31,7 @@ public class DeltaComTest {
 	}
 
 	@Test(groups = { "delta.com" }, description = "Check booking flights process correct working")
-	public void searchWorksOrNotTest() {
+	public void bookingFlightsTest() {
 		Assert.assertTrue(steps.checkAbilityToBookFlight(FROM, TO, DEP_DAY, RET_DAY, NAME, SURNAME, EMAIL));
 	}
 

@@ -22,8 +22,8 @@ import com.elinext.kapturtesttask.pages.AbstractPage;
 public class IncomingMessagesPage extends AbstractPage {
 	private final String BASE_URL = "https://mail.google.com/mail/u/0/#inbox";
 
-	@FindBy(xpath = "//*[@id=':a7']/div/div[2]/span/a")
-	private WebElement sendedMessages;
+	@FindBy(xpath = "//a[contains(text(),'Отправленные')]")
+	private WebElement sentMessages;
 
 	@FindBy(xpath = "//*[@id='gb']/div[1]/div[1]/div[2]/div[5]/div[1]/a/span")
 	private WebElement accountButton;
@@ -34,7 +34,7 @@ public class IncomingMessagesPage extends AbstractPage {
 	}
 
 	public void clickOnSendedLetters() {
-		sendedMessages.click();
+		sentMessages.click();
 	}
 
 	public void clickOnAccountButton() {
@@ -48,8 +48,8 @@ public class IncomingMessagesPage extends AbstractPage {
 	}
 
 	public List<WebElement> getSearchedIncomingMessages(String key) {
-		List<WebElement> searchedMessages = driver.findElements(
-				By.xpath("//*[@id=':34']/tbody/tr/td[6]/div/div/div/span[2 and contains(text(),'" + key + "')]"));
+		List<WebElement> searchedMessages = driver
+				.findElements(By.xpath("//tbody/tr/td[6]/div/div/div/span[2 and contains(text(),'" + key + "')]"));
 		return searchedMessages;
 	}
 

@@ -20,7 +20,7 @@ import com.elinext.kapturtesttask.pages.AbstractPage;
 public class LoginPage extends AbstractPage {
 	private final String BASE_URL = "https://accounts.google.com/signin/v2/sl/pwd?hl=ru&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin";
 
-	@FindBy(xpath = "//*[@id='identifierId']")
+	@FindBy(id = "identifierId")
 	private WebElement login;
 
 	@FindBy(xpath = "//*[@id='identifierNext']/content/span")

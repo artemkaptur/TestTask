@@ -27,20 +27,23 @@ public class PassangerInfoPage extends AbstractPage {
 	@FindBy(id = "gender0-button")
 	private WebElement gender;
 
-	@FindBy(xpath = "//*[@id='ui-id-74']")
-	private WebElement maleGender;
+	@FindBy(xpath = "//ul[@id='gender0-menu']")
+	WebElement genderMenu;
 
 	@FindBy(id = "month0-button")
 	private WebElement birthMonth;
 
-	@FindBy(id = "ui-id-77")
-	private WebElement january;
+	@FindBy(xpath = "//ul[@id='month0-menu']")
+	WebElement monthMenu;
 
 	@FindBy(id = "day0-button")
 	private WebElement birthDay;
 
-	@FindBy(id = "ui-id-90")
-	private WebElement firstDayOfMonth;
+	@FindBy(xpath = "//ul[@id='day0-menu']")
+	WebElement dayMenu;
+
+	@FindBy(xpath = "//ul[@id='year0-menu']")
+	WebElement yearMenu;
 
 	@FindBy(id = "year0-button")
 	private WebElement birthYear;
@@ -78,13 +81,18 @@ public class PassangerInfoPage extends AbstractPage {
 		this.name.sendKeys(name);
 		this.surname.sendKeys(surname);
 		gender.click();
-		maleGender.click();
+		genderMenu.sendKeys("M");
+		genderMenu.click();
 		birthMonth.click();
-		january.click();
+		monthMenu.sendKeys("January");
+		monthMenu.click();
 		birthDay.click();
-		firstDayOfMonth.click();
+		dayMenu.sendKeys("1");
+		dayMenu.click();
 		birthYear.click();
-		twoThousand.click();
+		yearMenu.sendKeys("2000");
+		yearMenu.click();
+
 		emgcName.sendKeys(name);
 		emgcSurname.sendKeys(surname);
 		emgcPhoneNumber.sendKeys(generatePhoneNumber());

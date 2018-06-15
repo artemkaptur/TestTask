@@ -15,7 +15,7 @@ import com.elinext.kapturtesttask.driver.DriverSingleton;
 import com.elinext.kapturtesttask.pages.gmail.IncomingMessagesPage;
 import com.elinext.kapturtesttask.pages.gmail.LoginPage;
 import com.elinext.kapturtesttask.pages.gmail.MainPage;
-import com.elinext.kapturtesttask.pages.gmail.SendedMessagesPage;
+import com.elinext.kapturtesttask.pages.gmail.SentMessagesPage;
 import com.elinext.kapturtesttask.pages.gmail.SpamPage;
 import com.elinext.kapturtesttask.pages.gmail.WriteMessagePage;
 
@@ -52,16 +52,16 @@ public class GmailSteps {
 		logger.info("Logout performed");
 	}
 
-	public void goToSendedMessages() {
+	public void goToSentMessages() {
 		IncomingMessagesPage incMessagesPage = new IncomingMessagesPage(driver);
 		incMessagesPage.clickOnSendedLetters();
 		logger.info("Sended messages are opened");
 	}
 
 	public void goToSpam() {
-		SendedMessagesPage sendedMessagesPage = new SendedMessagesPage(driver);
-		sendedMessagesPage.clickOnMoreButton();
-		sendedMessagesPage.clickOnSpam();
+		SentMessagesPage sentMessagesPage = new SentMessagesPage(driver);
+		sentMessagesPage.clickOnMoreButton();
+		sentMessagesPage.clickOnSpam();
 		logger.info("Spam is opened");
 	}
 

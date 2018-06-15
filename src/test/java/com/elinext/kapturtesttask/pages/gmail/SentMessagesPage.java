@@ -14,19 +14,26 @@ import com.elinext.kapturtesttask.pages.AbstractPage;
  * @author Артем
  *
  */
-public class MainPage extends AbstractPage {
-	private final String BASE_URL = "https://www.gmail.com/mail/help/intl/ru/about.html?design=65";
+public class SentMessagesPage extends AbstractPage {
+	private final String BASE_URL = "https://mail.google.com/mail/u/0/#sent";
 
-	@FindBy(id = "gmail-sign-in")
-	private WebElement loginButton;
+	@FindBy(xpath = "//span[contains(text(),'Ещё')]")
+	private WebElement moreButton;
 
-	public MainPage(WebDriver driver) {
+	@FindBy(xpath = "//a[contains(text(),'Спам')]")
+	private WebElement spamButton;
+
+	public SentMessagesPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
 	}
 
-	public void clickOnLoginButton() {
-		loginButton.click();
+	public void clickOnMoreButton() {
+		moreButton.click();
+	}
+
+	public void clickOnSpam() {
+		spamButton.click();
 	}
 
 	@Override

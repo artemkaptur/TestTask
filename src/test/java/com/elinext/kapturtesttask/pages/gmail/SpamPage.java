@@ -17,7 +17,7 @@ import com.elinext.kapturtesttask.pages.AbstractPage;
 public class SpamPage extends AbstractPage {
 	private final String BASE_URL = "https://mail.google.com/mail/u/0/#sent";
 	
-	@FindBy(xpath = "//*[@id=':a3']/div/div[2]")
+	@FindBy(xpath = "//a[contains(text(),'Входящие')]")
 	private WebElement incomingMessages;
 
 	public SpamPage(WebDriver driver) {
